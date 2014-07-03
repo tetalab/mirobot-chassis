@@ -29,12 +29,12 @@ module mountingHoles(){
 }
 
 module head(){
-      translate([0, 0, -5]) cylinder(5.1, 9.9, 9.9, $fn=50);
+      translate([0, 0, -5]) cylinder(5.1, 4.9, 4.9, $fn=50);
 }
 
 module headCutout(){
-      translate([0, 0, -12]) cylinder(12.1, 8, 8, $fn=50);
-      translate([-baseHeight/2-2,-gapWidth/2,-12]) cube([baseHeight+4,gapWidth,ballDiameter]);
+      translate([0, 0, -12]) cylinder(12.1, 2, 2, $fn=50);
+      translate([-baseHeight/2,-gapWidth/2+1,-12]) cube([baseHeight,gapWidth-2,ballDiameter+2]);
 }
 
 difference(){
@@ -44,6 +44,6 @@ difference(){
 }
 
 difference() {
-      head();
+    head();
 	headCutout();
 }
